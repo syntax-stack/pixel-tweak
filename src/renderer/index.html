@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self';
+  style-src 'self' https://fonts.googleapis.com;
+  font-src 'self' https://fonts.gstatic.com;">
+    <title>Pixel Tweak</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="renderer.js" defer></script>
+</head>
+<body>
+
+    <h1>Pixel Tweak</h1>
+    <div id="drop-area">Drop image here</div>
+    <pre id="log">Waiting for a file to process.</pre>
+    <section id="tweak-info">
+        <p id="file-directory">Uploaded file: </p>
+        <p id="out-directory">Output folder: </p>
+    </section>
+
+    <input id="always-on-top-checkbox" type="checkbox" checked><label>Always On Top</label><br>
+    <input id="experimental-checkbox" type="checkbox" ><label id="experimental-label">Experimental Processor</label>
+
+    <section id="buttons">
+        <button id="select-output-folder">Output Folder</button>
+        <button id="start-process">Export Image</button>
+    </section>
+</body>
+</html>

@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #161616;
+    color: #fafafa;
+    padding: 0 20px;
+    margin: 0;
+    user-select: none;
+}
+
+button, input[type="submit"], input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+button {
+    font-weight: 600;
+    font-size: 19px;
+    padding: 4px 8px;
+    margin: 0.2em 0.1em;
+    border-radius: 6px;
+    background: #3b3bcf;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #4e4edc;
+    transform: scale(1.05);
+}
+
+button:active {
+    background: #5e5eec;
+    transform: scale(0.95);
+}
+
+.code-highlight {
+    font-size: 14px;
+    background: #1e1e1e;
+    color: #a7dafd;
+    font-weight: 500;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+.recommended-highlight {
+    font-size: 15px;
+    background: #1e1e1e;
+    color: #fbc473;
+    font-weight: 700;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+.success-highlight {
+    font-size: 16px;
+    background: greenyellow;
+    color: #fff;
+    font-weight: 700;
+    padding: 4px 6px;
+    border-radius: 9px;
+}
+
+/* TODO: Move everything under here to a index-style.css */
+
+h1 {
+    font-size: 36px;
+    background: -webkit-linear-gradient(#925ce4, #555ccd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    font-weight: 600;
+}
+
+pre {
+    display: inline-block;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    margin: 0 auto;
+}
+
+pre.success {
+    border-color: greenyellow;
+}
+
+pre.error {
+    border-color: indianred;
+}
+
+#drop-area {
+    border: 2px dashed #fff;
+    height: 100px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#drop-area:hover:not(.highlight) {
+    font-size: 20px;
+    border: 2px dashed #f3c464;
+}
+
+#drop-area.highlight {
+    border-color: limegreen;
+    background-color: rgba(50, 205, 50, 0.1);
+}
+
+#tweak-info {
+    margin: 0;
+    padding: 10px 0;
+}
+
+#tweak-info p {
+    padding: 0;
+    margin: 4px 0;
+}
+
+#buttons {
+    margin-top: 20px;
+}
+

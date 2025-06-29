@@ -1,0 +1,21 @@
+{
+  "name": "pixel-tweak",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "Abdullah Caglayan",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "electron": "^37.1.0"
+  },
+  "dependencies": {
+    "d3-delaunay": "^6.0.4",
+    "jimp": "^1.6.0"
+  }
+}
