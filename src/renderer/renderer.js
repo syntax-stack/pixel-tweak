@@ -38,6 +38,20 @@ dropArea.addEventListener('drop', (e) => {
     dropArea.classList.remove('highlight');
 
     const files = e.dataTransfer.files;
+    const date = new Date();
+    const time = new Intl.DateTimeFormat('en-GB', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    }).format(date);
+
+    if (files[0].type !== "image/png") {
+        errorSound.play();
+        log.classList.add('error');
+        log.textContent = `[${time}] Submission file must be of .PNG format.`;
+        return;
+    }
 
     selectPngFile(files[0]);
 });
