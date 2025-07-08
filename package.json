@@ -5,17 +5,44 @@
   "main": "src/main/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder"
   },
   "keywords": [],
   "author": "Abdullah Caglayan",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
-    "electron": "^37.1.0"
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12"
   },
   "dependencies": {
     "d3-delaunay": "^6.0.4",
     "jimp": "^1.6.0"
+  },
+  "build": {
+    "appId": "com.abdullah.pixeltweak",
+    "productName": "Pixel Tweak",
+    "files": [
+      "**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Pixel Tweak"
+    }
   }
 }

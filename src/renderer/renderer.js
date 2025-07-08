@@ -15,6 +15,15 @@ const errorSound = new Audio("../../assets/error-sfx.ogg")
 successSound.volume = 0.2
 errorSound.volume = 0.15
 
+const getTime = (date) => {
+    return new Intl.DateTimeFormat('en-GB', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    }).format(date)
+}
+
 alwaysOnTopCheckbox.addEventListener('click', (e) => {
     window.electron.setAlwaysOnTopStatus(alwaysOnTopCheckbox.checked);
 })
@@ -38,13 +47,7 @@ dropArea.addEventListener('drop', (e) => {
     dropArea.classList.remove('highlight');
 
     const files = e.dataTransfer.files;
-    const date = new Date();
-    const time = new Intl.DateTimeFormat('en-GB', {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-    }).format(date);
+    const time = getTime()
 
     if (files[0].type !== "image/png") {
         errorSound.play();
@@ -68,13 +71,7 @@ dropArea.addEventListener('click', async (e) => {
 })
 
 document.getElementById('start-process').addEventListener('click', async (e) => {
-    const date = new Date();
-    const time = new Intl.DateTimeFormat('en-GB', {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-    }).format(date);
+    const time = getTime();
 
     if (currentFilePath === "") {
         errorSound.play();
@@ -112,13 +109,7 @@ function selectPngFile(file, path) {
 
     fileDirectory.innerHTML = `Uploaded file: <span class="code-highlight">${currentFilePath}</span>`
 
-    const date = new Date();
-    const time = new Intl.DateTimeFormat('en-GB', {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-    }).format(date);
+    const time = getTime()
 
     log.textContent = `[${time}] ${droppedFile.name} has been uploaded.`;
 }
